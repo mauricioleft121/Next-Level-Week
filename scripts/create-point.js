@@ -12,14 +12,14 @@ function populateUFs() {
     })
 }
 
-
 populateUFs()
 
 
 function getCities(event) {
   const citiesSelect = document.querySelector("select[name=city")
   const stateInput = document.querySelector("input[name=state")
-  citiesSelect.innerHTML = `<option value="0">Selecione a cidade</option>`
+  citiesSelect.innerHTML = `<option value="">Selecione a cidade</option>`
+  citiesSelect.disabled = true
 
   const ufValue = (event.target.value)
 
@@ -32,7 +32,7 @@ function getCities(event) {
   .then(cities => {
 
     for(city of cities) {
-      citiesSelect.innerHTML +=`<option value="${city.id}">${city.nome}</option>`
+      citiesSelect.innerHTML +=`<option value="${city.nome}">${city.nome}</option>`
     }
 
     citiesSelect.disabled =false
@@ -40,8 +40,43 @@ function getCities(event) {
 
 }
 
-
-
 document
-  .querySelector("select[name=uf")
+  .querySelector("select[name=uf]")
   .addEventListener("change", getCities)
+
+
+  const itemsToCollect = document.querySelectorAll(".items-grid li")
+
+  for(item of itemsToCollect) {
+    item.addEventListener("click", handleSelectedItem)
+  }
+
+ const collectedItems = document.querySelector("input[name=items]")
+
+  let selectedItems = []
+
+  function handleSelectedItem(event) {
+    const itemLi = event.target
+
+    itemLi.classList.toggle("selected")
+
+
+    const itemId = itemLi.dataset.id
+
+    const alreadySelected = selectedItems.findIndex( item => item == itemId) // isso será true ou false
+    
+    if(alreadySelected >= 0) {
+      const filteredItems = selectedItems.filter(item =>{
+        const itemIsDifferent = item != itemId
+        return itemIsDifferent
+      })
+
+      selectedItems = filteredItems
+    }
+    else {
+      selectedItems.push(itemId)
+    }
+
+   collectedItems.value = selectedItems
+
+  }
