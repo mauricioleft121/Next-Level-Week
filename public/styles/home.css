@@ -38,7 +38,7 @@
 }
 
 
-#page-home header a spam {
+#page-home header a span {
   margin-right: 16px;
   display: flex;
 
@@ -91,7 +91,7 @@
   background-color: #2fb86e;
 }
 
-#page-home main a spam {
+#page-home main a span {
   width: 72px;
   height: 72px;
 
@@ -106,7 +106,7 @@
   justify-content: center;
 }
 
-#page-home main a spam::after{
+#page-home main a span::after{
   content: "";
   background-image: url("../assets/search.svg");
 

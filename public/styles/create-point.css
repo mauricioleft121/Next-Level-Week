@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-#page-create-point header a spam {
+#page-create-point header a span {
   margin-right: 16px;
   background-image: url('../assets/arrow-left.svg');
 
@@ -59,10 +59,22 @@ form fieldset {
 
 form legend {
   margin-bottom: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
 }
 
 form legend h2 {
   font-size: 24px;
+}
+
+form legend span {
+  font-size: 14px;
+  color: var(--title-color);
+
 }
 
 form .field {
@@ -153,7 +165,7 @@ form button:hover {
   cursor: pointer;
 }
 
-.items-grid li spam {
+.items-grid li span {
   margin-top: 12px;
 
   flex: 1;
@@ -171,6 +183,6 @@ form button:hover {
 }
 
 .items-grid li img,
-.items-grid li spam{
+.items-grid li span{
   pointer-events: none;
 }

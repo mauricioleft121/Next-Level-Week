@@ -1,0 +1,18 @@
+{
+  "name": "NLW",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "repository": "https://github.com/mauricioleft121/Next-Level-Week.git",
+  "author": "Maurício <mauricioleft121@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
+  },
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
