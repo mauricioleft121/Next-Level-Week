@@ -60,8 +60,9 @@ document
 
     itemLi.classList.toggle("selected")
 
-
     const itemId = itemLi.dataset.id
+
+    
 
     const alreadySelected = selectedItems.findIndex( item => item == itemId) // isso será true ou false
     
